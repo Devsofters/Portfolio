@@ -1,0 +1,137 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 8%;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: #0b0f17d9;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1f2937;
+    padding: 14px 8%;
+}
+
+.logo {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    color: #f1f5f9;
+}
+
+.logoDot {
+    color: #38bdf8;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.navItem {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: #94a3b8;
+    cursor: pointer;
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.25s ease;
+}
+
+.navItem::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1.5px;
+    background: #38bdf8;
+    transition: width 0.25s ease;
+}
+
+.navItem:hover {
+    color: #e2e8f0;
+}
+
+.navItem:hover::after {
+    width: 100%;
+}
+
+/* ---------- Mobile menu toggle ---------- */
+
+.menuToggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menuToggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    transition: 0.25s ease;
+}
+
+.menuToggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menuToggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menuToggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+    .menuToggle {
+        display: flex;
+    }
+
+    .navLinks {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 240px;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+
+        background: #0b0f17;
+        border-left: 1px solid #1f2937;
+        padding: 100px 32px;
+
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .navLinks.open {
+        transform: translateX(0);
+    }
+}

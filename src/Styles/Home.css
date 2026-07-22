@@ -1,0 +1,293 @@
+.Homepage {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 8%;
+    overflow: hidden;
+    background: #0a0e17;
+}
+
+
+.BackGround {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.RadiantDiv {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.35;
+}
+
+.RadiantDivOne {
+    width: 480px;
+    height: 480px;
+    top: -120px;
+    left: -100px;
+    background: radial-gradient(circle, #a78bfa 0%, transparent 70%);
+    animation: drift1 22s ease-in-out infinite alternate;
+}
+
+.RadiantDivTwo {
+    width: 420px;
+    height: 420px;
+    bottom: -140px;
+    right: -80px;
+    background: radial-gradient(circle, #f5a623 0%, transparent 70%);
+    animation: drift2 26s ease-in-out infinite alternate;
+}
+
+@keyframes drift1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(80px, 60px) scale(1.15);
+    }
+}
+
+@keyframes drift2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(-70px, -50px) scale(1.1);
+    }
+}
+
+.ParentDiv {
+    position: absolute;
+    bottom: -40px;
+    color: #38bdf866;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 500;
+    animation-name: floatUp;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.5;
+    }
+
+    90% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translateY(-720px) translateX(24px);
+        opacity: 0;
+    }
+}
+
+
+.EditorDiv {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 720px;
+    background: #10161f;
+    border: 1px solid #1e2635;
+    border-radius: 12px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+.EditorDivHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    background: #0d1219;
+    border-bottom: 1px solid #1e2635;
+}
+
+.windowDots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.EditorDivTab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: #94a3b8;
+    background: #10161f;
+    padding: 6px 14px;
+    border-radius: 6px 6px 0 0;
+    border: 1px solid #1e2635;
+    border-bottom: none;
+}
+
+.tabIcon {
+    color: #f5a623;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.EditorDivBody {
+    padding: 28px 28px 32px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.EditorCodeLine {
+    color: #e5e9f0;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.EditorLineIndent {
+    padding-left: 28px;
+}
+
+.EditorLineNum {
+    display: inline-block;
+    width: 24px;
+    margin-right: 18px;
+    color: #38414f;
+    user-select: none;
+    text-align: right;
+}
+
+.kw {
+    color: #a78bfa;
+    font-weight: 500;
+}
+
+.fn {
+    color: #5eead4;
+}
+
+.propertyKey {
+    color: #94c9ff;
+}
+
+.propertyValue {
+    color: #f5a623;
+}
+
+.cmt {
+    color: #64748b;
+}
+
+.cursor {
+    color: #38bdf8;
+    opacity: 1;
+}
+
+.cursor.blinking {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.summaryLine {
+    display: block;
+}
+
+.ctaRow {
+    display: flex;
+    gap: 16px;
+    margin-top: 28px;
+    margin-left: 28px;
+    flex-wrap: wrap;
+}
+
+.resumeBtn,
+.contactBtn {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.promptArrow {
+    color: inherit;
+    opacity: 0.7;
+}
+
+.resumeBtn {
+    background: #a78bfa;
+    color: #0a0e17;
+    border: 1px solid #a78bfa;
+    font-weight: 500;
+}
+
+.resumeBtn:hover {
+    background: #c4b5fd;
+    transform: translateY(-3px);
+}
+
+.contactBtn {
+    background: transparent;
+    color: #f5a623;
+    border: 1px solid #f5a623;
+}
+
+.contactBtn:hover {
+    background: #f5a62318;
+    transform: translateY(-3px);
+}
+
+
+@media (max-width: 720px) {
+    .EditorDivBody {
+        padding: 22px 18px 26px;
+        font-size: 13px;
+    }
+
+    .EditorLineIndent {
+        padding-left: 14px;
+    }
+
+    .EditorLineNum {
+        width: 18px;
+        margin-right: 10px;
+    }
+
+    .ctaRow {
+        margin-left: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .RadiantDiv,
+    .ParentDiv,
+    .cursor.blinking {
+        animation: none !important;
+    }
+}

@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500&display=swap");
+
+html{
+    scroll-behavior:smooth;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Poppins,sans-serif;
+    background:#08111f;
+    color:white;
+}
+
+.app{
+    width:100%;
+}
+
+
+.content > div{
+    min-height:85vh;
+    padding:5px 8%;
+    display:flex;
+    align-items:center;
+}
