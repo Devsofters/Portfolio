@@ -34,6 +34,21 @@ const Navbar = () => {
                     </div>
                 ))}
             </div>
+
+            <button
+                className={`menuToggle ${menuOpen ? "open" : ""}`}
+                onClick={() => setMenuOpen((prev) => !prev)}
+                aria-label="Toggle menu"
+                style={{width : menuOpen ? "20px" : "23px"}}
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            {menuOpen && (
+                <div className="navOverlay" onClick={() => setMenuOpen(false)} />
+            )}
         </div>
     );
 };

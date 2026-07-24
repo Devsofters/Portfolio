@@ -7,7 +7,7 @@ const About = () => {
 
     useEffect(() => {
         const lines = [
-            "> whoami",
+            "> who am i",
             "Akash S — Frontend Developer",
             "> cat role.txt",
             "React.js specialist, 2+ yrs building production UI",
@@ -102,8 +102,11 @@ const About = () => {
                         <span className="cardChipDiv">React.js</span>
                         <span className="cardChipDiv">JavaScript ES6+</span>
                         <span className="cardChipDiv">Tailwind CSS</span>
+                        <span className="cardChipDiv">Material UI</span>
                         <span className="cardChipDiv">Node.js</span>
+                        <span className="cardChipDiv">Express.js</span>
                         <span className="cardChipDiv">REST APIs</span>
+                        <span className="cardChipDiv">MYSQL</span>
                         <span className="cardChipDiv">Git</span>
                     </div>
                 </div>
