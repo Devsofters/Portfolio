@@ -120,11 +120,18 @@ const Home = () => {
                     </div>
 
                     <div className="ctaRow">
-                        <button className="resumeBtn">
+                        <button className="resumeBtn"
+                        onClick={()=>{
+                            const link = document.createElement("a");
+                            link.href = "/Resume.pdf"
+                            link.download = "Resume.pdf"
+                            link.click()
+                        }}
+                        >
                             &gt; Download Resume
                         </button>
 
-                        <button className="contactBtn">
+                        <button className="contactBtn" onClick={() =>document.getElementById("Contact")?.scrollIntoView({ behavior: "smooth" })}>
                             &gt; Contact Me
                         </button>
                     </div>
